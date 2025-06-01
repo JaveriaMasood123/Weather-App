@@ -1,0 +1,171 @@
+/* ===== BASE STYLES ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background: url(./firewatch-sun-trees-mountains-birds-lake-evening-x8.jpg) no-repeat center/cover;
+  position: relative;
+}
+
+/* Background overlay for better text readability */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 26rem;
+  width: 90%;
+  backdrop-filter: blur(0.8rem);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-0.5rem);
+}
+
+/* ===== TYPOGRAPHY ===== */
+.container h1 {
+  margin-bottom: 1.8rem;
+  font-size: 2.2rem;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.5px;
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+.container h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4rem;
+  height: 3px;
+  background: linear-gradient(to right, #ff9966, #ff5e62);
+  border-radius: 3px;
+}
+
+/* ===== FORM ELEMENTS ===== */
+input[type="text"] {
+  padding: 0.9rem 1.2rem;
+  width: 100%;
+  border: none;
+  border-radius: 0.8rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.92);
+  color: #333;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"]:focus {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+button {
+  padding: 0.9rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  background: linear-gradient(to right, #ff9966, #ff5e62);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 8px rgba(255, 94, 98, 0.4);
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 16px rgba(255, 94, 98, 0.5);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+button:hover::after {
+  opacity: 1;
+}
+
+/* ===== OUTPUT SECTION ===== */
+#output {
+  
+  margin-top: 1.8rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+  font-size: 1.1rem;
+  color: #fff;
+  line-height: 1.6;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+@media (max-width: 480px) {
+  .container {
+    padding: 1.8rem;
+    border-radius: 1.2rem;
+  }
+  
+  .container h1 {
+    font-size: 1.8rem;
+  }
+  
+  input[type="text"] {
+    padding: 0.8rem 1rem;
+  }
+  
+  button {
+    padding: 0.8rem 1.5rem;
+  }
+}
